@@ -10,11 +10,15 @@ let package = Package(
             targets: ["LoggingPlayground"]
         )
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-log.git", .upToNextMinor(from: "1.4.2")),
+    ],
     targets: [
         .target(
             name: "LoggingPlayground",
-            dependencies: []
+            dependencies: [
+                .product(name: "Logging", package: "swift-log")
+            ]
         ),
     ]
 )
