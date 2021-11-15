@@ -1,5 +1,8 @@
 # LoggingPlayground
 
+[![Swift](https://img.shields.io/badge/Swift-5.5-orange.svg)](https://www.swift.org)
+[![License](https://img.shields.io/github/license/kkk669/swift-log-playground.svg)](LICENSE)
+
 This Swift package is a logging backend for [SwiftLog](https://github.com/apple/swift-log). It can be usable on Swift Playgrounds.
 
 ## Adding the dependency
