@@ -21,7 +21,7 @@ and to your application/library target, add "LoggingPlayground" to your dependen
 ],
 ```
 
-## Example
+## Example (Playground Book or Xcode Playground)
 
 ```swift
 import Logging
@@ -32,4 +32,27 @@ let logger = Logger(label: "main")
 LoggingSystem.bootstrap(PlaygroundHandler.init)
 
 logger.debug("The program started.")
+```
+
+## Example (App Project)
+
+```swift
+import Logging
+import LoggingPlayground
+import SwiftUI
+
+let logger = Logger(label: "main")
+
+@main
+struct MyApp: App {
+    init() {
+        LoggingSystem.bootstrap(PlaygroundHandler.init)
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
 ```
