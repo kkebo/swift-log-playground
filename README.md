@@ -1,6 +1,7 @@
 # LoggingPlayground
 
-[![Swift](https://img.shields.io/badge/Swift-5.5-orange.svg)](https://www.swift.org)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fkkk669%2Fswift-log-playground%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/kkk669/swift-log-playground)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fkkk669%2Fswift-log-playground%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/kkk669/swift-log-playground)
 [![License](https://img.shields.io/github/license/kkk669/swift-log-playground.svg)](LICENSE)
 
 This Swift package is a logging backend for [SwiftLog](https://github.com/apple/swift-log). It is usable on Swift Playgrounds.
