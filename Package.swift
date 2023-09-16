@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "LoggingPlayground",
+    name: "swift-log-playground",
     products: [
         .library(
             name: "LoggingPlayground",
