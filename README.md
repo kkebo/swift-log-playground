@@ -17,9 +17,12 @@ You need to declare your dependency in your Package.swift:
 and to your application/library target, add "LoggingPlayground" to your dependencies, e.g. like this:
 
 ```swift
-.target(name: "YourLibrary", dependencies: [
-    .product(name: "LoggingPlayground", package: "swift-log-playground")
-],
+.target(
+    name: "YourLibrary",
+    dependencies: [
+        .product(name: "LoggingPlayground", package: "swift-log-playground")
+    ]
+),
 ```
 
 ## Example (Playground Book or Xcode Playground)
