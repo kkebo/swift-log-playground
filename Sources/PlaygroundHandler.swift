@@ -30,6 +30,7 @@ public struct PlaygroundHandler {
         strftime(&buffer, buffer.count, "%Y-%m-%dT%H:%M:%S%z", localTime)
         return buffer.withUnsafeBufferPointer {
             $0.withMemoryRebound(to: CChar.self) {
+                // swift-format-ignore: NeverForceUnwrap
                 String(cString: $0.baseAddress!)
             }
         }
