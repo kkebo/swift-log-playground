@@ -11,7 +11,7 @@ This Swift package is a logging backend for [SwiftLog](https://github.com/apple/
 You need to declare your dependency in your Package.swift:
 
 ```swift
-.package(url: "https://github.com/kkebo/swift-log-playground", from: "0.1.0"),
+.package(url: "https://github.com/kkebo/swift-log-playground", from: "0.2.0"),
 ```
 
 and to your application/library target, add "LoggingPlayground" to your dependencies, e.g. like this:
@@ -33,7 +33,7 @@ import LoggingPlayground
 
 let logger = Logger(label: "main")
 
-LoggingSystem.bootstrap(PlaygroundHandler.init)
+LoggingSystem.bootstrap { PlaygroundHandler(label: $0) }
 
 logger.debug("The program started.")
 ```
@@ -50,9 +50,9 @@ let logger = Logger(label: "main")
 @main
 struct MyApp: App {
     init() {
-        LoggingSystem.bootstrap(PlaygroundHandler.init)
+        LoggingSystem.bootstrap { PlaygroundHandler(label: $0) }
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
