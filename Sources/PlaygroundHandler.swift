@@ -1,7 +1,7 @@
 import Foundation
 import Logging
 
-public struct PlaygroundHandler {
+public struct PlaygroundHandler: Sendable {
     private let label: String
     private var prettyMetadata: String?
     public var metadata = Logger.Metadata() {
