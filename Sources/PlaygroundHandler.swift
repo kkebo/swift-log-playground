@@ -25,9 +25,21 @@ public struct PlaygroundHandler: Sendable {
 
     private func timestamp() -> String {
         var buffer = [Int8](repeating: 0, count: 255)
+        #if os(Windows)
+        var timestamp = __time64_t()
+        _ = _time64(&timestamp)
+
+        var localTime = tm()
+        _ = _localtime64_s(&localTime, &timestamp)
+
+        _ = strftime(&buffer, buffer.count, "%Y-%m-%dT%H:%M:%S%z", &localTime)
+        #else
         var timestamp = time(nil)
-        let localTime = localtime(&timestamp)
+        guard let localTime = localtime(&timestamp) else {
+            return "<unknown>"
+        }
         strftime(&buffer, buffer.count, "%Y-%m-%dT%H:%M:%S%z", localTime)
+        #endif
         return buffer.withUnsafeBufferPointer {
             $0.withMemoryRebound(to: CChar.self) {
                 // swift-format-ignore: NeverForceUnwrap
