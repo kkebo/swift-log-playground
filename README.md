@@ -4,7 +4,7 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fkkebo%2Fswift-log-playground%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/kkebo/swift-log-playground)
 [![License](https://img.shields.io/github/license/kkebo/swift-log-playground.svg)](LICENSE)
 
-This Swift package is a logging backend for [SwiftLog](https://github.com/apple/swift-log). It is usable on Swift Playgrounds.
+This Swift package is a logging backend for [SwiftLog](https://github.com/apple/swift-log). It is usable on Swift Playground.
 
 ## Adding the dependency
 
