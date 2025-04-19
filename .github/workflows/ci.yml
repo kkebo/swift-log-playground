@@ -6,7 +6,7 @@ on:
     branches: ["main"]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     container: swift:6.0
     steps:
       - uses: actions/checkout@v4
@@ -19,16 +19,14 @@ jobs:
       - run: swift --version
       - run: swift build
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     container: swift:6.1
     steps:
       - uses: actions/checkout@v4
       - run: swift format lint -rsp .
   yamllint:
-    runs-on: ubuntu-latest
-    container: alpine:3.21
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
-      - run: apk update && apk add yamllint
       - run: yamllint --version
       - run: yamllint --strict --config-file .yamllint.yml .
