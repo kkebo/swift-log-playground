@@ -18,7 +18,33 @@ let package = Package(
             name: "LoggingPlayground",
             dependencies: [
                 .product(name: "Logging", package: "swift-log")
-            ]
+            ],
+            path: "Sources"
         )
     ]
 )
+
+// For development on iPadOS
+#if canImport(AppleProductTypes) && os(iOS)
+    import AppleProductTypes
+
+    package.platforms = [.iOS(.v18)]
+    package.products += [
+        .iOSApplication(
+            name: "Playground",
+            targets: ["Playground"],
+            supportedDeviceFamilies: [],
+            supportedInterfaceOrientations: []
+        )
+    ]
+    package.targets += [
+        .executableTarget(
+            name: "Playground",
+            dependencies: [
+                "LoggingPlayground",
+                .product(name: "Logging", package: "swift-log"),
+            ],
+            path: "Playground"
+        )
+    ]
+#endif
