@@ -20,7 +20,7 @@ jobs:
       - run: swift build
   lint:
     runs-on: ubuntu-24.04-arm
-    container: swift:6.1
+    container: swift:6.2
     steps:
       - uses: actions/checkout@v5
       - run: swift format lint -rsp .
