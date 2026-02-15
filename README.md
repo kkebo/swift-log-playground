@@ -50,8 +50,8 @@ let logger = Logger(label: "main")
 @main
 struct MyApp: App {
     init() {
-        // Use swift-log-playground only if running on Swift Playground or Xcode Previews
-        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+        // Use swift-log-playground only if running on Swift Playground
+        if Bundle.main.bundleIdentifier?.hasPrefix("swift-playgrounds-dev") == true {
             LoggingSystem.bootstrap { PlaygroundHandler(label: $0) }
         }
     }
