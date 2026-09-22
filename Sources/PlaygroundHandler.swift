@@ -98,14 +98,14 @@ extension PlaygroundHandler: LogHandler {
         source: String,
         file: String,
         function: String,
-        line: UInt
+        line: UInt,
     ) {
         let prettyMetadata: String?
         if let metadata = metadata, !metadata.isEmpty {
             prettyMetadata = self.prettify(
                 self.metadata.merging(
                     metadata,
-                    uniquingKeysWith: { _, new in new }
+                    uniquingKeysWith: { _, new in new },
                 )
             )
         } else {

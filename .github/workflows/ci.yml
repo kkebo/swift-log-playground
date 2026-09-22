@@ -28,7 +28,7 @@ jobs:
       - run: swift build
   lint:
     runs-on: ubuntu-24.04-arm
-    container: swift:6.3
+    container: swift:6.4
     permissions:
       contents: read
     steps:
