@@ -7,7 +7,7 @@ let package = Package(
     products: [
         .library(
             name: "LoggingPlayground",
-            targets: ["LoggingPlayground"]
+            targets: ["LoggingPlayground"],
         )
     ],
     dependencies: [
@@ -18,7 +18,7 @@ let package = Package(
             name: "LoggingPlayground",
             dependencies: [
                 .product(name: "Logging", package: "swift-log")
-            ]
+            ],
         )
-    ]
+    ],
 )
