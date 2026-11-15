@@ -11,7 +11,7 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-24.04-arm
-    container: swift:6.2
+    container: swift:6.2.4-noble@sha256:3459518b2e723a7c363d0f8cfa44fc796c77ecd8c18e92fd10e6f92dd78c0b12
     permissions:
       contents: read
     steps:
@@ -28,7 +28,7 @@ jobs:
       - run: swift build --force-resolved-versions
   lint:
     runs-on: ubuntu-24.04-arm
-    container: swift:6.4
+    container: swift:6.4.2-resolute@sha256:0384f00cf80f81064a907c249a0ad56a1648906f65075a95b1827e88de666e21
     permissions:
       contents: read
     steps:
